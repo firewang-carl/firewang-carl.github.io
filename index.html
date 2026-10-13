@@ -8,17 +8,29 @@
 <link rel="stylesheet" href="academic.css">
 <link rel="stylesheet" href="publication-visual.css">
 
+<style>
+.intro { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 28px; align-items: center; }
+.bio-photo { display: block; width: 140px; height: auto; border-radius: 6px; }
+.intro-copy { min-width: 0; }
+.intro-copy .intro-text { margin-bottom: 0; }
+@media screen and (max-width: 600px) {
+  .intro { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .bio-photo { width: 120px; }
+}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <!-- Separate version without the firefighter training project. -->
 <main id="main">
 <section id="about" class="intro">
+<img class="bio-photo" src="assets/xuan-wang-bio.jpg" alt="Portrait of Xuan Wang" width="448" height="560" fetchpriority="high">
+<div class="intro-copy">
 
 <div class="intro-heading"><h1>Xuan Wang</h1><span class="intro-links"><a href="https://scholar.google.com/citations?user=Y37jgJQAAAAJ&amp;hl=en">Google Scholar</a> <span aria-hidden="true">|</span> <a class="intro-email" href="mailto:xuanwang@psu.edu">Email</a></span></div>
 
 <p class="intro-text">I am a Ph.D. candidate in the School of Electrical Engineering and Computer Science at The Pennsylvania State University. I received my M.Eng. in Control Science and Engineering from Hunan University and my B.Eng. in Automation from Fuzhou University.</p>
-<p class="intro-text"></p>
+</div>
 </section>
 <section id="research" class="section">
 <h2>Research Interests</h2>
