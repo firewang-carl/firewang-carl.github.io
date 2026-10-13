@@ -1,0 +1,73 @@
+﻿/* Third version: compact academic content with clear section and citation hierarchy. */
+:root { --ink: #20252a; --muted: #555f68; --link: #245a8a; --line: #d8dde1; }
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: #fff; font: 16px/1.5 Arial, Helvetica, sans-serif; }
+main, footer { max-width: 960px; margin: auto; padding: 0 28px; }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+h1, h2 { font-family: Georgia, 'Times New Roman', serif; }
+h1 { font-size: 2rem; margin: 0 0 8px; }
+h2 { font-size: 1.13rem; line-height: 1.35; margin: 1px 0 0; font-weight: normal; }
+h3 { font-size: 1rem; margin: 0 0 4px; }
+p { margin: 0 0 8px; }
+.intro { padding: 36px 0 20px 160px; }
+.intro-role { color: var(--muted); margin-bottom: 12px; }
+.intro-text { max-width: 680px; }
+.contact-links { margin: 12px 0; font-size: .95rem; }
+.page-nav { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .9rem; margin-top: 18px; }
+.section { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 24px; padding: 20px 0; border-top: 1px solid var(--line); }
+.section-body { min-width: 0; }
+.experience-row { display: flex; flex-direction: row-reverse; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.experience-row:last-child { margin-bottom: 0; }
+.experience-date { font-size: .875rem; color: var(--muted); white-space: nowrap; padding-top: 1px; }
+.experience-row h3 { font-size: .95rem; margin: 0; font-weight: 600; }
+.degree { font-size: .92rem; margin: 0; color: var(--muted); }
+.research-themes > div { margin-bottom: 10px; }
+.research-themes > div:last-child { margin-bottom: 0; }
+.research-themes h3 { font-size: .95rem; }
+.research-themes p { margin-bottom: 0; }
+.section-note { font-size: .875rem; color: var(--muted); margin-bottom: 14px; }
+.publication-list, .manuscripts ul { padding: 0; margin: 0; list-style: none; }
+.publication, .manuscripts li { margin-bottom: 16px; }
+.publication:last-child, .manuscripts li:last-child { margin-bottom: 0; }
+.paper-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1rem; line-height: 1.4; margin: 0 0 3px; }
+.paper-title a { color: var(--ink); font-weight: bold; }
+.paper-citation { font-size: .875rem; line-height: 1.5; color: var(--muted); margin: 0; }
+.paper-citation strong { color: var(--ink); }
+.venue { display: block; font-style: italic; }
+.paper-link { font-style: normal; margin-left: 6px; }
+.manuscripts { margin-top: 20px; }
+.manuscripts > h3 { font-size: .95rem; margin-bottom: 12px; }
+.manuscripts .paper-title { font-size: .95rem; }
+.project { margin-bottom: 14px; }
+.project:last-child { margin-bottom: 0; }
+.project h3 { font-size: .95rem; }
+.project p { margin-bottom: 3px; }
+.inline-link { display: inline-block; font-size: .875rem; margin-right: 12px; }
+.project-status { font-size: .875rem; color: var(--muted); }
+.background-notes h3 { font-size: .95rem; margin-bottom: 5px; }
+.background-notes > div + div { margin-top: 16px; }
+.background-notes p { margin-bottom: 7px; font-size: .95rem; }
+.background-notes ul { padding-left: 18px; margin: 0; font-size: .95rem; }
+.background-notes li { margin-bottom: 3px; }
+footer { padding-top: 14px; padding-bottom: 24px; border-top: 1px solid var(--line); font-size: .8rem; color: var(--muted); }
+footer p { display: inline; margin-right: 10px; }
+.skip-link { position: absolute; top: -100px; }
+.skip-link:focus { top: 0; background: white; padding: 8px; }
+@media (max-width: 650px) {
+  main, footer { padding-left: 20px; padding-right: 20px; }
+  .intro { padding: 26px 0 18px; }
+  .section { grid-template-columns: 1fr; gap: 12px; padding: 18px 0; }
+  h2 { font-weight: bold; }
+  .experience-row { flex-direction: column-reverse; gap: 2px; }
+  .experience-date { font-size: .875rem; }
+}
+@media print {
+  main { max-width: none; padding: 0; }
+  .intro { padding: 0 0 15px; }
+  .page-nav, .skip-link, footer { display: none; }
+  .section { grid-template-columns: 120px 1fr; }
+  .publication, .manuscripts li, .experience-row, .project { break-inside: avoid; }
+  a { color: inherit; }
+}
